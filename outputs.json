@@ -1,0 +1,113 @@
+{
+  "backend_private_ips": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "web-1": "string",
+        "web-2": "string",
+        "web-3": "string"
+      }
+    ],
+    "value": {
+      "web-1": "10.0.10.196",
+      "web-2": "10.0.10.86",
+      "web-3": "10.0.10.249"
+    }
+  },
+  "backend_public_ips": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "web-1": "string",
+        "web-2": "string",
+        "web-3": "string"
+      }
+    ],
+    "value": {
+      "web-1": "40.172.215.143",
+      "web-2": "158.252.93.239",
+      "web-3": "158.252.79.207"
+    }
+  },
+  "backend_servers_info": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "web-1": [
+          "object",
+          {
+            "instance_id": "string",
+            "private_ip": "string",
+            "public_ip": "string"
+          }
+        ],
+        "web-2": [
+          "object",
+          {
+            "instance_id": "string",
+            "private_ip": "string",
+            "public_ip": "string"
+          }
+        ],
+        "web-3": [
+          "object",
+          {
+            "instance_id": "string",
+            "private_ip": "string",
+            "public_ip": "string"
+          }
+        ]
+      }
+    ],
+    "value": {
+      "web-1": {
+        "instance_id": "i-01189ee444d0e9051",
+        "private_ip": "10.0.10.196",
+        "public_ip": "40.172.215.143"
+      },
+      "web-2": {
+        "instance_id": "i-097cdb5d319f028f3",
+        "private_ip": "10.0.10.86",
+        "public_ip": "158.252.93.239"
+      },
+      "web-3": {
+        "instance_id": "i-0cb7f4968a752c4fd",
+        "private_ip": "10.0.10.249",
+        "public_ip": "158.252.79.207"
+      }
+    }
+  },
+  "configuration_guide": {
+    "sensitive": false,
+    "type": "string",
+    "value": "========================================\nDEPLOYMENT SUCCESSFUL!\n========================================\nNext Steps:\n1. SSH into Nginx server:\n   ssh ec2-user@51.112.45.241\n2. Edit Nginx config:\n   sudo vim /etc/nginx/nginx.conf\n3. Update backend IPs in upstream block:\n   - BACKEND_IP_1: 10.0.10.196\n   - BACKEND_IP_2: 10.0.10.86\n   - BACKEND_IP_3: 10.0.10.249\n4. Restart Nginx:\n   sudo systemctl restart nginx\n5. Test:\n   https://51.112.45.241\nBackend Servers:\n- web-1: 40.172.215.143 (private: 10.0.10.196)\n    - web-2: 158.252.93.239 (private: 10.0.10.86)\n    - web-3: 158.252.79.207 (private: 10.0.10.249)\n========================================\n"
+  },
+  "nginx_instance_id": {
+    "sensitive": false,
+    "type": "string",
+    "value": "i-0c1de976fe01c15a2"
+  },
+  "nginx_private_ip": {
+    "sensitive": false,
+    "type": "string",
+    "value": "10.0.10.226"
+  },
+  "nginx_public_ip": {
+    "sensitive": false,
+    "type": "string",
+    "value": "51.112.45.241"
+  },
+  "subnet_id": {
+    "sensitive": false,
+    "type": "string",
+    "value": "subnet-0249f0f8daf857021"
+  },
+  "vpc_id": {
+    "sensitive": false,
+    "type": "string",
+    "value": "vpc-04f470e48a397d4c5"
+  }
+}
